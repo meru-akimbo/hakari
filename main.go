@@ -1,0 +1,4 @@
+package hakari
+
+func main() {
+}
