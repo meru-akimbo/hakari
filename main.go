@@ -15,7 +15,11 @@ func main() {
 		args := os.Args
 
 		reader := ltsv.NewReader(os.Stdin)
-		records, _ := reader.ReadAll()
+		records, err := reader.ReadAll()
+
+		if err != nil {
+			panic(err)
+		}
 
 		var result float64
 
