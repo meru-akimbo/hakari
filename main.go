@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"syscall"
 
 	"github.com/najeira/ltsv"
 
@@ -11,7 +12,9 @@ import (
 )
 
 func main() {
-	if terminal.IsTerminal(1) {
+	if terminal.IsTerminal(syscall.Stdin) {
+		fmt.Println("Usage: cat hoge.ltsv | hakari (sum|ave) ${tareget_key}")
+	} else {
 		args := os.Args
 
 		reader := ltsv.NewReader(os.Stdin)
