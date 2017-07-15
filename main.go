@@ -50,6 +50,5 @@ func sum(key string, ltsv []map[string]string) float64 {
 }
 
 func ave(key string, ltsv []map[string]string) float64 {
-	sum := sum(key, ltsv)
-	return sum / float64(len(ltsv))
+	return sum(key, ltsv) / float64(len(ltsv))
 }
